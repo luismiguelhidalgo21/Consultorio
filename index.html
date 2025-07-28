@@ -336,26 +336,42 @@
         </div>
     </footer>
 
-    <!-- PDF Modal -->
+    <!-- Modal para PDF -->
     <div id="pdf-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-xl shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col">
             <div class="flex justify-between items-center border-b border-neutral-200 p-4">
                 <h3 class="text-xl font-serif font-medium text-neutral-800">Tu análisis de bienestar</h3>
                 <button id="close-modal" class="text-neutral-400 hover:text-neutral-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    ✕
                 </button>
             </div>
             <div id="pdf-preview" class="flex-1 overflow-auto p-4"></div>
-            <div class="border-t border-neutral-200 p-4 flex justify-center">
-                <button id="download-pdf" class="px-6 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-slow">
-                    Descargar PDF
-                </button>
+            <div class="modal-footer border-t border-neutral-200 p-4 flex justify-center space-x-4">
+                <!-- Botones se llenarán dinámicamente -->
             </div>
         </div>
     </div>
 
-    <script src="js/script.js"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Cargar variables de entorno -->
+    <script>
+        // Configuración desde variables de entorno
+        window.env = {
+            EMAILJS_USER_ID: import.meta.env.VITE_EMAILJS_USER_ID,
+            EMAILJS_SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            EMAILJS_TEST_TEMPLATE_ID: import.meta.env.VITE_EMAILJS_TEST_TEMPLATE_ID,
+            EMAILJS_APPOINTMENT_TEMPLATE_ID: import.meta.env.VITE_EMAILJS_APPOINTMENT_TEMPLATE_ID,
+            SITE_NAME: import.meta.env.VITE_SITE_NAME || 'Consultorio Psicológico',
+            DEFAULT_EMAIL: import.meta.env.VITE_DEFAULT_EMAIL || 'contacto@consultorio.com'
+        };
+        
+        // Inicializar EmailJS
+        emailjs.init(window.env.EMAILJS_USER_ID);
+    </script>
+    
+    <!-- Nuestro script -->
+    <script src="js/script.js" type="module"></script>
 </body>
 </html>
