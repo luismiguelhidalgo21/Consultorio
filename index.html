@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultorio Psicológico | Bienestar Integral</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Literata:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        neutral: {
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            200: '#e5e5e5',
+                            300: '#d4d4d4',
+                            400: '#a3a3a3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
+                        },
+                        accent: {
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Literata', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-slow {
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral-50 font-sans text-neutral-800 antialiased">
+    <!-- Header -->
+    <header class="bg-primary-700 text-white shadow-md">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col items-center">
+                <h1 class="text-3xl md:text-4xl font-serif font-medium mb-2 text-center">Consultorio Psicológico</h1>
+                <p class="text-primary-100 text-lg font-light">Bienestar emocional integral</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 bg-white/80 backdrop-blur-sm shadow-sm z-10">
+        <div class="container mx-auto px-4">
+            <ul class="flex justify-center space-x-6 py-4">
+                <li><a href="#inicio" class="text-neutral-600 hover:text-primary-600 font-medium px-3 py-2 rounded-lg transition-slow">Inicio</a></li>
+                <li><a href="#servicios" class="text-neutral-600 hover:text-primary-600 font-medium px-3 py-2 rounded-lg transition-slow">Servicios</a></li>
+                <li><a href="#test" class="text-neutral-600 hover:text-primary-600 font-medium px-3 py-2 rounded-lg transition-slow">Test</a></li>
+                <li><a href="#contacto" class="text-neutral-600 hover:text-primary-600 font-medium px-3 py-2 rounded-lg transition-slow">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- Hero Section -->
+        <section id="inicio" class="mb-20">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-serif font-medium mb-6 text-neutral-800">Un espacio seguro para tu crecimiento personal</h2>
+                    <p class="text-lg text-neutral-600 mb-8 leading-relaxed">
+                        En nuestro consultorio ofrecemos acompañamiento profesional con un enfoque humanista, 
+                        ayudándote a navegar tus desafíos emocionales con herramientas basadas en evidencia.
+                    </p>
+                    <a href="#test" class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-slow">
+                        Realizar test de bienestar
+                    </a>
+                </div>
+                <div class="md:w-1/2 bg-primary-100 rounded-2xl p-8 h-96 flex items-center justify-center">
+                    <div class="text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-primary-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <h3 class="font-serif text-xl text-neutral-700 mb-2">Terapia personalizada</h3>
+                        <p class="text-neutral-500">Enfoques adaptados a tus necesidades específicas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios" class="mb-20">
+            <h2 class="text-3xl font-serif font-medium text-center mb-12 text-neutral-800">Nuestros Servicios</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md p-6 transition-slow">
+                    <div class="text-primary-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-medium mb-3 text-neutral-800">Terapia Individual</h3>
+                    <p class="text-neutral-600">
+                        Sesiones personalizadas para trabajar en tus desafíos personales, emocionales y de desarrollo.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md p-6 transition-slow">
+                    <div class="text-primary-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-medium mb-3 text-neutral-800">Terapia de Pareja</h3>
+                    <p class="text-neutral-600">
+                        Espacio para mejorar la comunicación, resolver conflictos y fortalecer la relación.
+                    </p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md p-6 transition-slow">
+                    <div class="text-primary-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-medium mb-3 text-neutral-800">Terapia Familiar</h3>
+                    <p class="text-neutral-600">
+                        Intervenciones para mejorar las dinámicas familiares y resolver conflictos intergeneracionales.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md p-6 transition-slow">
+                    <div class="text-primary-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-medium mb-3 text-neutral-800">Orientación Vocacional</h3>
+                    <p class="text-neutral-600">
+                        Ayuda para tomar decisiones informadas sobre tu futuro profesional y educativo.
+                    </p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md p-6 transition-slow">
+                    <div class="text-primary-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-medium mb-3 text-neutral-800">Talleres Grupales</h3>
+                    <p class="text-neutral-600">
+                        Espacios de aprendizaje y crecimiento en temas específicos como manejo de estrés, autoestima, etc.
+                    </p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md p-6 transition-slow">
+                    <div class="text-primary-600 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-medium mb-3 text-neutral-800">Evaluaciones Psicológicas</h3>
+                    <p class="text-neutral-600">
+                        Pruebas estandarizadas para evaluar diferentes aspectos de tu salud mental y cognitiva.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Test Section -->
+        <section id="test" class="mb-20">
+            <div class="bg-white rounded-xl shadow-sm p-8 max-w-3xl mx-auto">
+                <h2 class="text-3xl font-serif font-medium text-center mb-6 text-neutral-800">Test de Bienestar Emocional</h2>
+                <p class="text-neutral-600 text-center mb-8 max-w-2xl mx-auto">
+                    Este cuestionario te ayudará a reflexionar sobre tu estado emocional actual. Responde con sinceridad para obtener un análisis personalizado.
+                </p>
+
+                <div id="text-test-container">
+                    <!-- Question 0 -->
+                    <div class="text-question active-question mb-8">
+                        <h3 class="text-xl font-serif font-medium mb-4 text-primary-700">Datos personales</h3>
+                        <p class="text-neutral-700 mb-4">Nombre Completo:</p>
+                        <textarea class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-slow resize-none" rows="5" placeholder="Escribe tu respuesta aquí..."></textarea>
+                    </div>
+                    <!-- Question 1 -->
+                    <div class="text-question mb-8 hidden">
+                        <h3 class="text-xl font-serif font-medium mb-4 text-primary-700">Pregunta 1/5</h3>
+                        <p class="text-neutral-700 mb-4">Describe cómo te has sentido emocionalmente en las últimas dos semanas:</p>
+                        <textarea class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-slow resize-none" rows="5" placeholder="Escribe tu respuesta aquí..."></textarea>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="text-question mb-8 hidden">
+                        <h3 class="text-xl font-serif font-medium mb-4 text-primary-700">Pregunta 2/5</h3>
+                        <p class="text-neutral-700 mb-4">¿Qué situaciones te generan mayor estrés o ansiedad actualmente?</p>
+                        <textarea class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-slow resize-none" rows="5" placeholder="Escribe tu respuesta aquí..."></textarea>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="text-question mb-8 hidden">
+                        <h3 class="text-xl font-serif font-medium mb-4 text-primary-700">Pregunta 3/5</h3>
+                        <p class="text-neutral-700 mb-4">¿Cómo describirías tus patrones de sueño y alimentación recientes?</p>
+                        <textarea class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-slow resize-none" rows="5" placeholder="Escribe tu respuesta aquí..."></textarea>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="text-question mb-8 hidden">
+                        <h3 class="text-xl font-serif font-medium mb-4 text-primary-700">Pregunta 4/5</h3>
+                        <p class="text-neutral-700 mb-4">¿Qué aspectos de tu vida te generan mayor satisfacción?</p>
+                        <textarea class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-slow resize-none" rows="5" placeholder="Escribe tu respuesta aquí..."></textarea>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="text-question mb-8 hidden">
+                        <h3 class="text-xl font-serif font-medium mb-4 text-primary-700">Pregunta 5/5</h3>
+                        <p class="text-neutral-700 mb-4">¿Qué cambios te gustaría lograr en tu bienestar emocional?</p>
+                        <textarea class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-slow resize-none" rows="5" placeholder="Escribe tu respuesta aquí..."></textarea>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="flex justify-between pt-4 border-t border-neutral-200">
+                        <button id="prev-text-btn" class="px-6 py-2 border border-neutral-300 text-neutral-600 rounded-lg hover:bg-neutral-50 disabled:opacity-50 disabled:cursor-not-allowed transition-slow" disabled>
+                            Anterior
+                        </button>
+                        <button id="next-text-btn" class="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-slow">
+                            Siguiente
+                        </button>
+                        <button id="submit-text-btn" class="px-6 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-slow hidden">
+                            Generar PDF
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="mb-12">
+            <div class="bg-white rounded-xl shadow-sm p-8 max-w-4xl mx-auto">
+                <h2 class="text-3xl font-serif font-medium text-center mb-8 text-neutral-800">Contacto</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-serif font-medium mb-4 text-neutral-800">Información de contacto</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-1 mr-3 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                <span class="text-neutral-600">Calle Bienestar 123, Ciudad</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-1 mr-3 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                                <span class="text-neutral-600">(123) 456-7890</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-1 mr-3 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <span class="text-neutral-600">contacto@consultorio.com</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mt-1 mr-3 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span class="text-neutral-600">Lunes a Viernes: 9:00 - 18:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-serif font-medium mb-4 text-neutral-800">Agendar una cita</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <input type="text" placeholder="Nombre completo" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-slow">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Correo electrónico" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-slow">
+                            </div>
+                            <div>
+                                <textarea placeholder="Motivo de la consulta" rows="3" class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-slow"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white py-2 px-4 rounded-lg shadow-sm hover:shadow-md transition-slow">
+                                Enviar solicitud
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-800 text-neutral-300 py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <p class="mb-2">© 2023 Consultorio Psicológico. Todos los derechos reservados.</p>
+                <p class="text-sm text-neutral-500">Este test no sustituye una evaluación psicológica profesional.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PDF Modal -->
+    <div id="pdf-modal" class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-xl shadow-xl w-full max-w-4xl max-h-[90vh] flex flex-col">
+            <div class="flex justify-between items-center border-b border-neutral-200 p-4">
+                <h3 class="text-xl font-serif font-medium text-neutral-800">Tu análisis de bienestar</h3>
+                <button id="close-modal" class="text-neutral-400 hover:text-neutral-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div id="pdf-preview" class="flex-1 overflow-auto p-4"></div>
+            <div class="border-t border-neutral-200 p-4 flex justify-center">
+                <button id="download-pdf" class="px-6 py-2 bg-accent-600 text-white rounded-lg hover:bg-accent-700 transition-slow">
+                    Descargar PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
